@@ -1,0 +1,1195 @@
+{
+  "name": "Table Booking Bot",
+  "type": "dialog",
+  "status": "Available",
+  "created": "2021-12-18T03:05:32.110Z",
+  "updated": "2021-12-18T03:39:12.472Z",
+  "language": "en",
+  "skill_id": "d31661eb-cf48-43ca-9ccd-6289012d791e",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_250",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "It's sad to hear! I'll be here when you want to book a table..."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_250",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_909"
+                },
+                {
+                  "value": "NO",
+                  "from_entity": "entity_9940"
+                }
+              ]
+            },
+            "next_step": "step_862"
+          },
+          {
+            "step": "step_555",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Let's book table for you."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_555",
+            "condition": {
+              "or": [
+                {
+                  "eq": [
+                    {
+                      "variable": "step_909"
+                    },
+                    {
+                      "value": "YES",
+                      "from_entity": "entity_9940"
+                    }
+                  ]
+                },
+                {
+                  "eq": [
+                    {
+                      "variable": "step_952"
+                    },
+                    {
+                      "value": "Reserve a table",
+                      "from_entity": "entity_38757"
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_909"
+          },
+          {
+            "step": "step_855",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi welcome to Paradise! Could you help me with your name?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_855",
+            "next_step": "step_952"
+          },
+          {
+            "step": "step_862",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yay ! Lets book a table for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_37629",
+                "parameters": null,
+                "result_variable": "step_862_result_1"
+              }
+            },
+            "variable": "step_862",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_909"
+                },
+                {
+                  "value": "YES",
+                  "from_entity": "entity_9940"
+                }
+              ]
+            }
+          },
+          {
+            "step": "step_909",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Click on [Menu](https://img4.nbstatic.in/tr:w-700/5c5142ed590801000c8a6d50.jpg) to see it !"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "YES",
+                      "value": {
+                        "input": {
+                          "text": "YES"
+                        }
+                      }
+                    },
+                    {
+                      "label": "NO",
+                      "value": {
+                        "input": {
+                          "text": "NO"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_9940",
+              "max_tries": 3,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_909",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_952"
+                },
+                {
+                  "value": "Menu",
+                  "from_entity": "entity_38757"
+                }
+              ]
+            },
+            "next_step": "step_250"
+          },
+          {
+            "step": "step_952",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hello "
+                          },
+                          {
+                            "variable": "step_855"
+                          },
+                          {
+                            "scalar": ".. How can I help you?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Menu",
+                      "value": {
+                        "input": {
+                          "text": "Menu"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Reserve a table",
+                      "value": {
+                        "input": {
+                          "text": "Reserve a table"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_38757",
+              "max_tries": 3,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_952",
+            "next_step": "step_555"
+          }
+        ],
+        "title": "Hello",
+        "action": "action_16206",
+        "handlers": [],
+        "condition": {
+          "intent": "action_16206_intent_30366"
+        },
+        "variables": [
+          {
+            "title": "It's sad to hear! I'll be here when you want to book a table...",
+            "variable": "step_250",
+            "data_type": "any"
+          },
+          {
+            "title": "Let's book table for you.",
+            "variable": "step_555",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi welcome to Paradise! Could you help me with your name?",
+            "variable": "step_855",
+            "data_type": "any"
+          },
+          {
+            "title": "Yay ! Lets book a table for you!",
+            "variable": "step_862",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_862_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Click on [Menu](https://img4.nbstatic.in/tr:w-700/5c5142ed590801",
+            "variable": "step_909",
+            "data_type": "any"
+          },
+          {
+            "title": "Hello {variable}.. How can I help you?",
+            "variable": "step_952",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_111",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You have choosen "
+                          },
+                          {
+                            "variable": "step_628"
+                          },
+                          {
+                            "scalar": ". At which time you want me to book a table?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm sorry, I did not catch that, please restate your response."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-time",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_111",
+            "condition": {
+              "gte": [
+                {
+                  "variable": "step_628"
+                },
+                {
+                  "time": {
+                    "value": "2021-12-18"
+                  }
+                }
+              ]
+            },
+            "next_step": "step_569"
+          },
+          {
+            "step": "step_569",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please enter the time after 1hr from the current time..."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_111"
+                }
+              ]
+            },
+            "variable": "step_569",
+            "condition": {
+              "lt": [
+                {
+                  "variable": "step_111"
+                },
+                {
+                  "add": [
+                    {
+                      "system_variable": "current_time"
+                    },
+                    {
+                      "duration": {
+                        "hours": 1
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_857"
+          },
+          {
+            "step": "step_595",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please check your date. Enter the future date."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_628"
+                }
+              ]
+            },
+            "variable": "step_595",
+            "condition": {
+              "lt": [
+                {
+                  "variable": "step_628"
+                },
+                {
+                  "system_variable": "current_date"
+                }
+              ]
+            },
+            "next_step": "step_111"
+          },
+          {
+            "step": "step_628",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Could you please specify the date ?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm sorry, I did not catch that, please restate your response."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-date",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_628",
+            "next_step": "step_595"
+          },
+          {
+            "step": "step_857",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank You, you have booked a table for "
+                          },
+                          {
+                            "variable": "step_111"
+                          },
+                          {
+                            "scalar": " at "
+                          },
+                          {
+                            "variable": "step_628"
+                          },
+                          {
+                            "scalar": "  . \nThank You !"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_857",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_111"
+                },
+                {
+                  "add": [
+                    {
+                      "system_variable": "current_time"
+                    },
+                    {
+                      "duration": {
+                        "hours": 1
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Book a table",
+        "action": "action_37629",
+        "handlers": [],
+        "condition": {
+          "intent": "action_37629_intent_37972"
+        },
+        "variables": [
+          {
+            "title": "You have choosen {variable}. At which time you want me to book a",
+            "variable": "step_111",
+            "data_type": "any"
+          },
+          {
+            "title": "Please enter the time after 1hr from the current time...",
+            "variable": "step_569",
+            "data_type": "any"
+          },
+          {
+            "title": "Please check your date. Enter the future date.",
+            "variable": "step_595",
+            "data_type": "any"
+          },
+          {
+            "title": "Could you please specify the date ?",
+            "variable": "step_628",
+            "data_type": "any"
+          },
+          {
+            "title": "Thank You, you have booked a table for {variable} at {variable} ",
+            "variable": "step_857",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_862_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_16206",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Welcome, how can I assist you?"
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_37629",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_16206_intent_30366",
+        "examples": [
+          {
+            "text": "gm"
+          },
+          {
+            "text": "gn"
+          },
+          {
+            "text": "Hello"
+          },
+          {
+            "text": "hey"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "sup"
+          },
+          {
+            "text": "watssup"
+          }
+        ]
+      },
+      {
+        "intent": "action_37629_intent_37972",
+        "examples": [
+          {
+            "text": "Book a table"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "I would like to speak to someone"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "entity_38757",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Menu",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Reserve a table",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_9940",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "NO",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "YES",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "sys-time",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [],
+    "data_types": [],
+    "counterexamples": [],
+    "system_settings": {
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "confirm_return": {
+            "text": "Return to previous topic?"
+          },
+          "confirm_switch": {
+            "text": "Switch from the current topic?"
+          }
+        },
+        "question_steps_threshold": 2
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above"
+      },
+      "intent_classification": {
+        "training_backend_version": "v2"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false
+  },
+  "description": "",
+  "workspace_id": "d31661eb-cf48-43ca-9ccd-6289012d791e",
+  "dialog_settings": {
+    "actions": true
+  }
+}

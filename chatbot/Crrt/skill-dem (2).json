@@ -1,0 +1,1349 @@
+{
+  "intents": [
+    {
+      "intent": "affirm",
+      "examples": [
+        {
+          "text": "indeed"
+        },
+        {
+          "text": "y"
+        },
+        {
+          "text": "yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ask_cuisine",
+      "examples": [
+        {
+          "text": "i am looking for [Italian]{\"entity\": \"cuisine\", \"value\": \"italian\"} food"
+        },
+        {
+          "text": "i am looking for [italian]food",
+          "mentions": [
+            {
+              "entity": "cuisine",
+              "location": [
+                17,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want Italian food"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ask_location",
+      "examples": [
+        {
+          "text": "i am at hyderabad"
+        },
+        {
+          "text": "i want some recommendations of restaurants in [mumbai]",
+          "mentions": [
+            {
+              "entity": "location",
+              "location": [
+                46,
+                52
+              ]
+            }
+          ]
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ask_time",
+      "examples": [
+        {
+          "text": "what day is it today?"
+        },
+        {
+          "text": "what time is right now?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "book_restaurant_table",
+      "examples": [
+        {
+          "text": "Please book a table"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "bot_challenge",
+      "examples": [
+        {
+          "text": "am I talking to a bot?"
+        },
+        {
+          "text": "are you a bot?"
+        },
+        {
+          "text": "are you a human?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "current_location",
+      "examples": [
+        {
+          "text": "i want to find restaurants near me."
+        },
+        {
+          "text": "near me"
+        },
+        {
+          "text": "take my current location."
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "deny",
+      "examples": [
+        {
+          "text": "n"
+        },
+        {
+          "text": "never"
+        },
+        {
+          "text": "no"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "dont_know_location",
+      "examples": [
+        {
+          "text": "i don't know my address"
+        },
+        {
+          "text": "i don't know my location"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "get_booking_status",
+      "examples": [
+        {
+          "text": "i want to know booking status"
+        },
+        {
+          "text": "plz provide me booking status"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "get_phone_number",
+      "examples": [
+        {
+          "text": "My phone number is 9819819811",
+          "mentions": [
+            {
+              "entity": "phone_number",
+              "location": [
+                19,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Phone number is 7892345671"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "cu"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "good by"
+        },
+        {
+          "text": "Thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greet",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "Hi bot"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "home_delivery",
+      "examples": [
+        {
+          "text": "I want it to be delivered to my desired place"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "home_deliveryy",
+      "examples": [
+        {
+          "text": "home delivery"
+        },
+        {
+          "text": "home delivery pls"
+        },
+        {
+          "text": "I want it to be delivered"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "mood_great",
+      "examples": [
+        {
+          "text": "amazing"
+        },
+        {
+          "text": "great"
+        },
+        {
+          "text": "perfect"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "mood_unhappy",
+      "examples": [
+        {
+          "text": "I am sad"
+        },
+        {
+          "text": "I don't feel very well"
+        },
+        {
+          "text": "my day was horrible"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no_cuisine_preference",
+      "examples": [
+        {
+          "text": "anything is fine"
+        },
+        {
+          "text": "i don't know what to eat"
+        },
+        {
+          "text": "i want food"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "restaurant",
+      "examples": [
+        {
+          "text": "find me a restaurant"
+        },
+        {
+          "text": "i am searching for a restaurant"
+        },
+        {
+          "text": "i am starving"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "telling_numpeople",
+      "examples": [
+        {
+          "text": "please book a table for [10] people"
+        },
+        {
+          "text": "please book table for [5]people",
+          "mentions": [
+            {
+              "entity": "num_people",
+              "location": [
+                22,
+                23
+              ]
+            }
+          ]
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "telling_phonenum",
+      "examples": [
+        {
+          "text": "[9819819811][9819819811]"
+        },
+        {
+          "text": "i would like to book with the contact number [9819819811]"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thankyou",
+      "examples": [
+        {
+          "text": "Thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "what_can_you_do",
+      "examples": [
+        {
+          "text": "hey what can you do for me"
+        },
+        {
+          "text": "how can you help me"
+        },
+        {
+          "text": "what is your capability"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "what_is_your_name",
+      "examples": [
+        {
+          "text": "Dude,what is your name?"
+        },
+        {
+          "text": "Hey,what's your name?"
+        },
+        {
+          "text": "how can i address you"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "ask_cuisine",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "What cuisine are you interested in?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ask_for_booking",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Shall I book a table?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ask_location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "May i know your location?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ask_number_booking_status",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Please share your number to get the booking status",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ask_num_people",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Please, let me know the number of people coming",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ask_phone_num",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "please share your contact number.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "best_cuisine",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "How about trying italian food?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "booking",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Book a Table in Top Restaurant",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Home delivery",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Not Requied",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "cheer_up",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Here is something to cheer you up:",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "cuisine",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "[italia",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "current_location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "switch on your location in your device so that i can take you",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "default",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I'm sorry, I can't help you",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "did_that_help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Did that help you?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "dont_know_location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Sorry,i can't help you with out any specified location.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "goodbye",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Bye,have a nice day.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "greet",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Hi, i am restaurant-bot.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "happy",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Great, carry on!",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "home_delivery",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Home delivery",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "iamabot",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I am a bot, powered by Rasa.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "[mumba",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "no_cuisine_preference",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Hmm,then i will check for some restaurants according to",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "not_best_cuisine",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "May be you can visit our website to see any cuisines you like.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "num_people",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "[",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "phone_number",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "9819819811",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "rephrase",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I'm sorry, I didn't quite understand that. Could you rephrase?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "reserve_res_table",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Reserve table",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "restaurants",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Ok,i will find you some delicious restaurants.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sorry_cuisine",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Sorry,I cannot find the results for the cuisine you mentioned.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sorry_location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Sorry,our sevice is not available for the location that you",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "time",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "It is {time}",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "welcome",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "It's my pleasure to help you.Enjoy your dining.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "what_can_you_do",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I can help you to find some delicious",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "what_is_your_name",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I am restaurant-bot.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "when_direct_location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Do you want to search for restuarants?",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1639898838379"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1639897265725",
+      "context": {
+        "goodbye": "#goodbye"
+      },
+      "conditions": "#goodbye",
+      "event_name": "input",
+      "dialog_node": "handler_10_1639897265738"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_2_1639891186853",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1639896541913"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1639896542809",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1639896542819",
+      "previous_sibling": "handler_3_1639896542819"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_7_1639831138079",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1639896822130"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Options",
+            "options": [
+              {
+                "label": "Home Delivery",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Restaurant Booking",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              },
+              {
+                "label": "Not Required",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_3_1639897265725",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1639897265738",
+      "previous_sibling": "handler_10_1639897265738"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1639896542809",
+      "event_name": "input",
+      "dialog_node": "handler_3_1639896542819"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_5_1639834763087",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1639896954202"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1639896955503",
+      "context": {
+        "ask_location": "#ask_location"
+      },
+      "conditions": "#ask_location",
+      "event_name": "input",
+      "dialog_node": "handler_3_1639896955511"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_9_1639890285425",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1639897264923"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_4_1639897156872",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1639897475718",
+      "previous_sibling": "response_8_1639897475712"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1639897476239",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1639897476250",
+      "previous_sibling": "handler_8_1639897476250"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1639896822937",
+      "context": {
+        "ask_cuisine": "#ask_cuisine"
+      },
+      "conditions": "#ask_cuisine",
+      "event_name": "input",
+      "dialog_node": "handler_6_1639896822944"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1639896955503",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1639896955511",
+      "previous_sibling": "handler_3_1639896955511"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1639896822937",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1639896822944",
+      "previous_sibling": "handler_6_1639896822944"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1639897476239",
+      "context": {
+        "goodbye": "#goodbye"
+      },
+      "conditions": "#goodbye",
+      "event_name": "input",
+      "dialog_node": "handler_8_1639897476250"
+    },
+    {
+      "type": "standard",
+      "title": "No",
+      "parent": "node_9_1639898838379",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@booking:(Not Requied)",
+      "dialog_node": "node_2_1639891186853",
+      "previous_sibling": "node_4_1639897156872"
+    },
+    {
+      "type": "standard",
+      "title": "reply",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Here are top results for your requirements: \nRestaurant: Prost Brew Pub \nCuisines: Italian,Continental, Chinese \nRating: 4.6 \nRestaurant: Buffalo Wild Wings \nCuisines: American, Mexican,Healthy Food, Finger Food, Burger, Fast Food \nRating: 4.5 \nRestaurant: Buffalo Wild Wings \nCuisines: American, Mexican,Healthy Food, Finger Food, Burger, Fast Food\nRating: 4.4"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_9_1639890285425"
+      },
+      "conditions": "#ask_location",
+      "dialog_node": "node_3_1639835723955",
+      "previous_sibling": "node_5_1639834763087"
+    },
+    {
+      "type": "standard",
+      "title": "Home delivery",
+      "parent": "node_9_1639898838379",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@booking:(Home delivery)",
+      "dialog_node": "node_4_1639897156872",
+      "previous_sibling": "node_9_1639890285425"
+    },
+    {
+      "type": "frame",
+      "title": "ask location",
+      "output": {
+        "text": {
+          "values": [
+            "May I know your location?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#ask_cuisine",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1639834763087",
+      "previous_sibling": "node_7_1639831138079"
+    },
+    {
+      "type": "frame",
+      "title": "asking cuisine",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#greet",
+      "dialog_node": "node_7_1639831138079",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Booking",
+      "parent": "node_9_1639898838379",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#book_restaurant_table ||  @booking:(Book a Table in Top Restaurant)",
+      "dialog_node": "node_9_1639890285425"
+    },
+    {
+      "type": "standard",
+      "title": "details",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please enter your name"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1639890285425",
+      "conditions": "#book_restaurant_table",
+      "dialog_node": "node_9_1639891197568",
+      "previous_sibling": "slot_3_1639897265725"
+    },
+    {
+      "type": "standard",
+      "title": "Sevices",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Home delivey",
+                "value": {
+                  "input": {
+                    "text": "@booking:(Home delivery)"
+                  }
+                }
+              },
+              {
+                "label": "Book a table",
+                "value": {
+                  "input": {
+                    "text": "@booking:(Book a Table in Top Restaurant)"
+                  }
+                }
+              },
+              {
+                "label": "Not Requied",
+                "value": {
+                  "input": {
+                    "text": "@No"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_9_1639890285425"
+      },
+      "conditions": "#thankyou",
+      "dialog_node": "node_9_1639898838379",
+      "previous_sibling": "node_3_1639835723955"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please enter your name, phone no so that we would book a table at top restuarant displayed."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": " Delivery",
+            "options": [],
+            "response_type": "option"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1639890285425",
+      "conditions": "@booking:(Book a Table in Top Restaurant)",
+      "dialog_node": "response_10_1639890960883",
+      "previous_sibling": "node_9_1639891197568"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Anything else",
+      "disabled": true,
+      "conditions": "#ask_location",
+      "dialog_node": "response_3_1639832429361"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, What cuisines do you want to have?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1639831138079",
+      "conditions": "#greet",
+      "dialog_node": "response_4_1639831314982",
+      "previous_sibling": "slot_10_1639896822937"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            ""
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1639835723955",
+      "disabled": true,
+      "conditions": "",
+      "dialog_node": "response_5_1639835752726",
+      "previous_sibling": "response_6_1639846651716"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "May I know your location?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_5_1639834763087",
+      "disabled": true,
+      "conditions": "#ask_cuisine",
+      "dialog_node": "response_6_1639834897599",
+      "previous_sibling": "slot_5_1639896955503"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Here are top results for your requirements: Restaurant: Prost Brew Pub Cuisines: Italian,Continental, Chinese Rating: 4.6 Restaurant: Buffalo Wild Wings Cuisines: American, Mexican,Healthy Food, Finger Food, Burger, Fast Food Rating: 4.5 Restaurant: Buffalo Wild Wings Cuisines: American, Mexican,Healthy Food, Finger Food, Burger, Fast Food Rating: 4.4"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1639835723955",
+      "disabled": true,
+      "conditions": "#restaurant",
+      "dialog_node": "response_6_1639846651716"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Thank you for using our service. Hope you liked it."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1639891186853",
+      "conditions": "@booking:(Not Requied)",
+      "dialog_node": "response_6_1639896069032",
+      "previous_sibling": "slot_9_1639896542809"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Sure. Please enter desired $ask_cuisine cuisine, address, phone no."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1639897156872",
+      "conditions": "@booking:(Home delivery)",
+      "dialog_node": "response_8_1639897475712"
+    },
+    {
+      "type": "slot",
+      "parent": "node_7_1639831138079",
+      "variable": "$ask_cuisine",
+      "dialog_node": "slot_10_1639896822937",
+      "previous_sibling": "handler_2_1639896822130"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1639897156872",
+      "variable": "$goodbye",
+      "dialog_node": "slot_2_1639897476239",
+      "previous_sibling": "handler_5_1639897475718"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1639890285425",
+      "variable": "$goodbye",
+      "dialog_node": "slot_3_1639897265725",
+      "previous_sibling": "handler_4_1639897264923"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1639834763087",
+      "variable": "$ask_location",
+      "dialog_node": "slot_5_1639896955503",
+      "previous_sibling": "handler_3_1639896954202"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1639891186853",
+      "dialog_node": "slot_9_1639896542809",
+      "previous_sibling": "handler_1_1639896541913"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am a Restaurant bot. I am here to recommend you a good restaurant. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1639831138079"
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "dem",
+  "language": "en",
+  "description": ""
+}

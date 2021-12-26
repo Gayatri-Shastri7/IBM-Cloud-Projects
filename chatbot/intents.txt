@@ -1,0 +1,10 @@
+Hello! Welcome to the online table booking bot for Paradise. Could you help me with your name?
+ 
+https://img4.nbstatic.in/tr:w-700/5c0d3f6f5f1503000d232c4d.jpg
+
+Could you please specify the date of your booking?
+
+You have entered a past date. Please specify a future date.
+
+At which time you want me to book your table?
+
